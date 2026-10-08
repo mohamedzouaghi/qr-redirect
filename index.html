@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // 1. Define your 10 links here! 
+      const destinations = {
+        "promoA": "https://ar-ribatt.atlassian.net/wiki/spaces/VCM/overview",
+        "promoB": "https://second-url.com",
+        "promoC": "https://third-url.com"
+        // Add as many as you want here
+      };
+      // 2. Check the URL for the ID
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+      // 3. Redirect the user
+      if (destinations[id]) {
+        window.location.replace(destinations[id]);
+      } else {
+        // Optional: Where to send someone if they scan a broken/deleted QR code
+        window.location.replace("https://your-default-website.com"); 
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting you...</p>
+  </body>
+</html>
